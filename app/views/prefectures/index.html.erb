@@ -1,0 +1,14 @@
+<h1>Prefectures</h1>
+
+<ul>
+	<% @prefectures.each do |prefecture|%>
+	<li>
+		<%= link_to prefecture.name, prefecture_path(prefecture.id)%>
+		<%= link_to "[Edit]", edit_prefecture_path(prefecture.id)%>
+		<%= link_to "[Delete]", prefecture_path(prefecture.id),method: :delete, data:{confirm: "Are you sure?"}%>
+
+	</li>
+	<%end%>
+</ul>
+
+<%= link_to "Add New Prefecture", new_prefecture_path%>
